@@ -4,7 +4,7 @@ import body from "../assets/body.jpg";
 function PointerSample({ position }) {
   return (
     <div className="flex flex-col justify-center items-center">
-      <div>PointerSample</div>
+      <div>PointerSample1</div>
       <div>X: {position.x}, Y: {position.y}</div>
       <div className="w-[200px] h-[400px] relative">
         <img src={body} alt="body" className="w-[200px] h-[400px] absolute" />

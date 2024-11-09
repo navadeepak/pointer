@@ -44,7 +44,7 @@ function PointerSample2() {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <div>PointerSer</div>
+      <div>PointerSample2</div>
       <div>
         Start: <input 
           type="number" 

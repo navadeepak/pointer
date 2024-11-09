@@ -13,7 +13,7 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col-reverse">
       <div className="flex flex-row justify-evenly">
         <PointerSer />
         <PointerSample2 />
