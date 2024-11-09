@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import PointerSer from "./components/pointerSer";
+import PointerCli from "./components/pointerCli";
+import PointerSample from "./components/PointerSample1";
+import PointerSample2 from "./components/PointerSample2";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handlePointerUpdate = (newPosition) => {
+    setPosition(newPosition);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="flex flex-col">
+      <div className="flex flex-row justify-evenly">
+        <PointerSer />
+        <PointerSample2 />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <hr className="h-2"/>
+      <div className="flex flex-row justify-evenly">
+        <PointerCli onPointerUpdate={handlePointerUpdate} />
+        <PointerSample position={position} />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
